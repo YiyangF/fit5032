@@ -72,12 +72,15 @@
       <p>Opening Hours:</p>
       <!-- Activity 11: Iterate through the openingHours object and display the day of the week and the opening and closing times. -->
       <!-- TODO: CODE TO RENDER LIST OF OPENING HOURS HERE -->
-
+      <div v-for="(hours, day) in bookstores.openingHours" :key = "day">
+        {{ day }}: Open time: {{ hours.open }} Close time: {{ hours.close }}
+      </div>
       <h3>Working with Arrays in Objects</h3>
       <!-- Activity 12: Get the top sellers from the bookstores object. -->
       <!-- TODO: CODE TO GET TOP SELLERS HERE -->
       <p>We operate in:</p>
       <p>Our #1 seller:</p>
+      {{ bookstores.topSellers[0] }}
     </section>
 
     <section class="lab-section">
@@ -86,26 +89,18 @@
       <!-- Activity 13: Toggle the message visibility when the button is clicked. -->
       <!-- TODO: CODE TO TOGGLE MESSAGE VISIBILITY HERE. Hint: Use the v-if directive. -->
       <button @click="showMessage = !showMessage">Toggle Message</button>
-      <p class="message success">✨ You're a Vue superstar! ✨</p>
-      <p>Click the button to see a message.</p>
+      <p v-if="showMessage" class="message success">✨ You're a Vue superstar! ✨</p>
+      <p v-else>Click the button to see a message.</p>
     </section>
 
     <section class="lab-section">
       <h2>Attribute, Class and Style Binding with <code>v-bind</code></h2>
       <p>Highlighting Specific Authors:</p>
-
+      <li :style="{ color: 'red'}"> ID: {{orwell.id}} </li>
+      <li :style="{ color: 'red'}"> Name: {{orwell.name}} </li>
+      <li :style="{ color: 'red'}"> BirthYear: {{orwell.birthYear}} </li>
+      <li :style="{ color: 'red'}"> FamousWorks: {{orwell.famousWorks}} </li>
     </section>
-    <P>{{ authors }}</P>
-    <P>{{ 123456 }}</P>
-    <P>{{ bookstores }}</P>
-    <P>{{ 123456 }}</P>
-    <P>{{ modernAuthors }}</P>
-    <P>{{ 123456 }}</P>
-    <P>{{ allFamousWorks }}</P>
-    <P>{{ 123456 }}</P>
-    <P>{{ orwell }}</P>
-    <P>{{ 123456 }}</P>
-    <P>{{ austen }}</P>
   </div>
 </template>
 
