@@ -10,7 +10,9 @@
       <h3>Iterating through Arrays</h3>
       <!-- Activity 6: Render a list containing author names and their birth years. Hint: Make use of the v-for directive to iterate through the array of authors. -->
       <!-- TODO: CODE TO RENDER LIST OF AUTHORS HERE -->
-      
+      <div v-for="author in authors" :key = "author.id">
+        {{ author.name }} : {{ author.birthYear }}
+      </div>
       <h3>Filtering Arrays</h3>
       <!-- Activity 7: Render a list containing authors born after 1850. Hint: Make use of the v-for directive to iterate through the array of authors that you have filtered out. -->
       <p>Authors born after 1850:</p>
@@ -81,6 +83,17 @@
       <p>Highlighting Specific Authors:</p>
 
     </section>
+    <P>{{ authors }}</P>
+    <P>{{ 123456 }}</P>
+    <P>{{ bookstores }}</P>
+    <P>{{ 123456 }}</P>
+    <P>{{ modernAuthors }}</P>
+    <P>{{ 123456 }}</P>
+    <P>{{ allFamousWorks }}</P>
+    <P>{{ 123456 }}</P>
+    <P>{{ orwell }}</P>
+    <P>{{ 123456 }}</P>
+    <P>{{ austen }}</P>
   </div>
 </template>
 
@@ -96,21 +109,25 @@ const showMessage = ref(false)
 // Activity 2: Get authors born after 1850
 const modernAuthors = computed(() => {
   // TODO: CODE TO FILTER ARRAY OF AUTHORS HERE
+  return authors.filter((author) => author.birthYear > 1850)
 })
 
 // Activity 3: Get all famous works
 const allFamousWorks = computed(() => {
   // TODO: CODE TO GET ALL FAMOUS WORKS HERE
+  return authors.flatMap((author) => author.famousWorks)
 })
 
 // Activity 4: Find author by name
 const orwell = computed(() => {
   // TODO: CODE TO FIND AUTHOR BY NAME HERE
+  return authors.find((author) => author.name == "George Orwell")
 })
 
 // Activity 5: Find author by ID
 const austen = computed(() => {
   // TODO: CODE TO FIND AUTHOR BY ID HERE
+  return authors.find((author) => author.id == 1)
 })
 </script>
 
@@ -123,6 +140,7 @@ const austen = computed(() => {
   background-color: #f4f4f4;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #333;
 }
 
 h1,
