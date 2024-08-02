@@ -17,12 +17,17 @@
       <!-- Activity 7: Render a list containing authors born after 1850. Hint: Make use of the v-for directive to iterate through the array of authors that you have filtered out. -->
       <p>Authors born after 1850:</p>
       <!-- TODO: CODE TO RENDER LIST OF AUTHORS HERE -->
-
+      <div v-for="author in modernAuthors" :key = "author.id">
+        {{ author.name }} : {{ author.birthYear }}
+      </div>
       <h3>Mapping Arrays</h3>
       <p>Famous works:</p>
       <ul>
         <!-- Activity 8: Render a list of all famous works. Hint: Use the v-for directive to iterate through the array of authors that you have filtered out. -->
         <!-- TODO: CODE TO RENDER LIST OF FAMOUS WORKS HERE -->
+        <div v-for="famousWorks in allFamousWorks" :key = "famousWorks.title">
+        {{ famousWorks.title }} : {{ famousWorks.year }}
+      </div>
       </ul>
 
       <h3>Finding in Arrays</h3>
@@ -32,6 +37,9 @@
       <p>{{ austen?.name }}'s works:</p>
       <!-- Activity 9: Render a list of Austen's works. Hint: Use the v-for directive to iterate through the array of authors that you have filtered out. -->
       <!-- TODO: CODE TO RENDER LIST OF AUSTEN'S WORKS HERE -->
+      <div v-for="famousWorks in austen.famousWorks" :key = "famousWorks.title">
+        Title: {{ famousWorks.title }}, Year: {{ famousWorks.year }}
+      </div>
     </section>
 
     <section class="lab-section">
@@ -43,19 +51,23 @@
         Company:
         <!-- Activity 9a: Get the company name from the bookstores object. -->
         <!-- TODO: CODE TO GET COMPANY NAME HERE -->
+         {{ bookstores.name }}
       </p>
 
       <p>
         Total Stores:
         <!-- Activity 9b: Get the total number of stores from the bookstores object. -->
         <!-- TODO: CODE TO GET TOTAL STORES HERE -->
+        {{ bookstores.totalStores }}
       </p>
 
       <h3>Iterating Object Properties</h3>
       <p>Store Types:</p>
       <!-- Activity 10: Iterate through the storeTypes array and display the store type and the number of stores that use that type. -->
       <!-- TODO: CODE TO RENDER LIST OF STORE TYPES HERE -->
-
+      <div v-for="(count, storeType) in bookstores.storeTypes" :key = "storeType">
+        {{ storeType }}: {{ count }}
+      </div>
       <h3>Nested Objects</h3>
       <p>Opening Hours:</p>
       <!-- Activity 11: Iterate through the openingHours object and display the day of the week and the opening and closing times. -->
