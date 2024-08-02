@@ -1,22 +1,23 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
+import JSON from './components/JSON.vue';
 import MyName from './components/MyName.vue';
 import TheWelcome from './components/TheWelcome.vue'
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <!-- <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" /> -->
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-      <MyName/>
+      <!-- <HelloWorld msg="You did it!" />
+      <MyName/> -->
     </div>
   </header>
-
-  <main>
+  <JSON />
+  <!-- <main>
     <TheWelcome />
-  </main>
+  </main> -->
 </template>
 
 <style scoped>
