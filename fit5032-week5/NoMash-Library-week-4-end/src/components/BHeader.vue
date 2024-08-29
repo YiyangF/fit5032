@@ -1,3 +1,18 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { userAuthenticate } from '../router/authenticate';
+
+const { isAuthenticated } = userAuthenticate();
+const router = useRouter();
+
+const logout = () => {
+  isAuthenticated.value = false;
+  alert("logout");
+  router.push({name: 'Home'}); 
+};
+</script>
+
 <template>
   <!-- Using Bootstrap's Header template (starter code) -->
   <!-- https://getbootstrap.com/docs/5.0/examples/headers/ -->
@@ -14,6 +29,9 @@
         </li>
         <li class="nav-item">
           <router-link to="/login" class="nav-link" active-class="active">Login</router-link>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" active-class="active" @click="logout">Logout</button>
         </li>
       </ul>
     </header>
