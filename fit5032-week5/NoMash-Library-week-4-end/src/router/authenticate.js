@@ -3,6 +3,7 @@ import router from '../router/index'
 const isAuthenticated = ref (false)
 
 export function userAuthenticate() {
+    console.log('isAuthenticated before:', isAuthenticated.value);
     const login = () => {
         isAuthenticated.value = true;
         console.log("User logged in:", isAuthenticated.value);
