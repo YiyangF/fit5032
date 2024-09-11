@@ -5,6 +5,7 @@ import LoginView from '../views/LoginView.vue'
 import { userAuthenticate } from './authenticate'
 import FirebaseSigninView from '@/views/FirebaseSigninView.vue'
 import FirebaseRegisterView from '@/views/FirebaseRegisterView.vue'
+import AdminView from '@/views/AdminView.vue'
 
 
 const routes = [
@@ -17,6 +18,11 @@ const routes = [
     path: '/about',
     name: 'About',
     component: AboutView
+  },
+  {
+    path: '/Admin',
+    name: 'Admin',
+    component: AdminView
   },
   {
     path: '/login',
