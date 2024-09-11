@@ -2,6 +2,8 @@
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { userAuthenticate } from '../router/authenticate';
+import { signOut, getAuth } from 'firebase/auth';
+import { useAuth } from '../router/useAuth';
 
 const { isAuthenticated } = userAuthenticate();
 const router = useRouter();
@@ -10,6 +12,15 @@ const logout = () => {
   isAuthenticated.value = false;
   alert("logout");
   router.push({name: 'Home'}); 
+};
+
+const auth = getAuth();
+const firebaselogout = () => {
+  signOut(auth).then(() =>{
+    alert("Signout")
+  }).catch((error) => {
+    console.log("Signout failed", error)
+  });
 };
 </script>
 
@@ -41,6 +52,9 @@ const logout = () => {
         </li>
         <li class="nav-item">
           <router-link to="/FireRegister" class="nav-link" active-class="active">Firebase Register</router-link>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" active-class="active" @click="firebaselogout">FirebaseLogout</button>
         </li>
       </ul>
     </header>
