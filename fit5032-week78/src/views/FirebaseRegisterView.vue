@@ -2,7 +2,7 @@
     <div class="wrapper">
       <div class="center-content">
         <h1>Create an Account</h1>
-        <p><input type="text" placeholder="Email" v-model="email"/></p>
+        <p><input type="text" placeholder="Email" v-model="email" /></p>
         <p><input type="password" placeholder="Password" v-model="password" /></p>
         <p><button @click="register">Save to Firebase</button></p>
       </div>
@@ -27,21 +27,21 @@
         alert("Firebase Register Successful!")
       }).catch((error) => {
         console.log(error.code);
+        alert("Firebase Register failed!")
       })
   };
   </script>
   
   <style scoped>
-  /* Ensure the whole page takes up the full height */
   .wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
+    height: 100vh; 
     background-color: #f5f5f5;
   }
   
-  /* Center the form content */
+
   .center-content {
     text-align: center;
     background-color: white;
@@ -50,9 +50,10 @@
     border-radius: 10px;
   }
   
-  /* Style the input fields and button */
+
   input[type="text"], input[type="password"] {
     background-color: white;
+    color: black;
     border: 1px solid #ccc;
     padding: 10px;
     font-size: 16px;
