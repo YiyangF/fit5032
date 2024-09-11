@@ -33,6 +33,9 @@ const logout = () => {
         <li class="nav-item">
           <button class="nav-link" active-class="active" @click="logout">Logout</button>
         </li>
+        <li class="nav-item">
+          <router-link to="/FireLogin" class="nav-link" active-class="active">Firebase Login</router-link>
+        </li>
       </ul>
     </header>
   </div>
