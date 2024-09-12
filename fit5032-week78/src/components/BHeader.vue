@@ -3,7 +3,7 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { userAuthenticate } from '../router/authenticate';
 import { signOut, getAuth } from 'firebase/auth';
-import { useAuth } from '../router/useAuth';
+
 
 const { isAuthenticated } = userAuthenticate();
 const router = useRouter();
