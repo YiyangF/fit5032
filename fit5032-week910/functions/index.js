@@ -26,6 +26,20 @@ exports.countBooks = onRequest((req, res) => {
     }
   });
 });
+
+exports.addBooks = onRequest((req, res) => {
+  cors(req, res, async () => {
+    try {
+      const {isbn, name} = req.body;
+      await admin.firestore().collection("books").add(
+          {isbn: isbn, name: name.toUpperCase()});
+      res.status(200).send("Book add successed");
+    } catch (error) {
+      console.error("Error adding books:", error.message);
+      res.status(500).send("Error adding books");
+    }
+  });
+});
 // Create and deploy your first functions
 // https://firebase.google.com/docs/functions/get-started
 
