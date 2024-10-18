@@ -17,6 +17,6 @@ export default defineConfig({
   },
   
   base: process.env.NODE_ENV === 'production'
-    ? '/fit5032/'
+    ? '/fit5032/fit5032-week1112/'
     : '/'
 })
