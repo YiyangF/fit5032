@@ -14,7 +14,7 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  base: import.meta.env.MODE === 'production'
+  base: (import.meta.env.MODE || 'development') === 'production'
     ? '/fit5032/'
     : '/'
 })
