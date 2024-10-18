@@ -10,13 +10,10 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
+  base: '/fit5032/fit5032-week1112',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  
-  base: process.env.NODE_ENV === 'production'
-    ? '/fit5032/fit5032-week1112/'
-    : '/'
 })
