@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -14,7 +15,8 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  base: (import.meta.env.MODE || 'development') === 'production'
+  
+  base: process.env.NODE_ENV === 'production'
     ? '/fit5032/'
     : '/'
 })
