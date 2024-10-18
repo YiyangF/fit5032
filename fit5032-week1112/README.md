@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+# fit5032
+=======
 # NoMash-Library
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -33,3 +36,4 @@ npm run build
 ```sh
 npm run lint
 ```
+>>>>>>> c296c42 (Initial commit)
